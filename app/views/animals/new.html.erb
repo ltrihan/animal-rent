@@ -1,12 +1,18 @@
 <div class="container">
   <div class="row">
     <div class="col-md-8 col-md-offset-2">
-      <h1>Create a new animal</h1>
+      <h1>Create your animal</h1>
 
       <%= simple_form_for @animal do |f| %>
-        <%= f.input :name %>
-        <%= f.input :description %>
-        <%= f.input :species %>
+        <%= f.input :name, placeholder: "Your pets' name here" %>
+        <%= f.input :description, placeholder: 'Tell us more about it' %>
+        <%= f.input :species, collection: ["Dog", "Cat", "Tortle", "Rabbit", "Dragons", "Others"] %>
+        <label>
+          <%= f.file_field :image, class: "d-none" %>
+          <div class="btn btn-light">
+            Download a picture
+          </div>
+        </label>
         <%= f.button :submit, class: 'btn btn-primary' %>
       <% end %>
     </div>
