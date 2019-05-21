@@ -11,16 +11,13 @@
             <h2><%= animal.name %></h2>
             <%= link_to animal.name, animal_path(animal) %>
             <%= link_to animal_path(animal), method: :delete, data: { confirm: "Are you sure?" } do %>
-<<<<<<< HEAD
             <div class="text-right">
                   <i class="fa fa-trash destroy_animal"></i>
                   </div>
-=======
             <br>
                 <div class="text-right">
                   <i class="fa fa-trash destroy_animal"></i>
                 </div>
->>>>>>> 8eac7b74261d0182b4abe50f88e0a887d27428d0
             <% end %>
           </li>
         <% end %>
