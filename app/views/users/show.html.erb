@@ -1,0 +1,29 @@
+<div class="container">
+
+  <h2 class="text-center">Informations of <%= @user.email %></h2>
+
+  <h2 class="text-center">My animals put on rent</h2>
+
+  <% if @user.animals.empty? %>
+    <p class="text-center">You haven't put any animal on rent.</p>
+  <% else %>
+    <ul>
+      <% @user.animals.each do |animal| %>
+      <li><%= animal.name %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <h2 class="text-center">My bookings</h2>
+
+  <% if @user.bookings.empty? %>
+    <p class="text-center">You haven't any booking for the moment.</p>
+  <% else %>
+    <ul>
+      <% @user.bookings.each do |booking| %>
+      <li><%= booking.start_at %> - <%= booking.end_at %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+</div>

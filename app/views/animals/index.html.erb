@@ -1,15 +1,19 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-10 col-sm-offset-1">
-      <h1>All Animals</h1>
-      <%= link_to "Add a animal", new_animal_path, class: "btn btn-primary btn-lg" %>
+      <div class="text-center">
+      <h1 class="text-center">All Animals</h1>
+      <%= link_to "Add an animal", new_animal_path, class: "btn btn-primary btn-lg" %>
+    </div>
       <ul class="list-group">
         <% @animals.each do |animal| %>
           <li class="list-group-item">
             <h2><%= animal.name %></h2>
-            <%= link_to animal.name, animal_path(animal) %>
+            <%= link_to "view more details", animal_path(animal) %>
             <%= link_to animal_path(animal), method: :delete, data: { confirm: "Are you sure?" } do %>
+            <div class="text-right">
                   <i class="fa fa-trash destroy_animal"></i>
+                </div>
             <% end %>
           </li>
         <% end %>

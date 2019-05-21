@@ -2,6 +2,8 @@
   <div class="row">
     <div class="col-xs-12">
       <h1><%= @animal.name %></h1>
-      <%= link_to "Back to all animals", root_path %>
+      <p><%= @animal.description %></p>
+      <p><%= @animal.species %></p>
+      <%= link_to "Back to all animals", animals_path %>
     </div>
   </div>
