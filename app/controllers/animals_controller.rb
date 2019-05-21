@@ -36,6 +36,6 @@ def destroy
 end
 
 def animal_params
-  params.require(:animal).permit(:name)
+  params.require(:animal).permit(:name  :description, :species, :price)
 
 end
