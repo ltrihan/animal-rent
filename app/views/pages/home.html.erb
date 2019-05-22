@@ -1,2 +1,19 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner">
+
+  <h1 class="text-center">Don't let a pet get bored</h1>
+
+  <div class="row">
+
+    <div class="col-lg-6 text-center">
+      <h2 class="text-center">Rent a pet... </h2>
+      <%= link_to "Rent an animal", animals_path, class: 'btn btn-success' %>
+    </div>
+
+    <div class="col-lg-6 text-center">
+      <h2 class="text-center">or put your own in rent !</h2>
+      <%= link_to "Put in rent", new_animal_path, class: 'btn btn-info' %>
+    </div>
+
+  </div>
+
+</div>
