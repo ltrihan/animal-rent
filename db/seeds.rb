@@ -5,23 +5,24 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
+Booking.destroy_all
 Animal.destroy_all
 User.destroy_all
+
 
 puts "Creating some users and animals..."
 
 
-kevin = User.new(email: "kevin@animalrent.com", password: "azerty")
+kevin = User.new(email: ", name: "kevin", password: "azerty")
 kevin.save
 
-justine = User.new(email: "justine@animalrent.com", password: "azerty")
+justine = User.new(email: "justine@animalrent.com", name: "justine", password: "azerty")
 justine.save
 
-loic = User.new(email: "loic@animalrent.com", password: "azerty")
+loic = User.new(email: "loic@animalrent.com", name: "loic", password: "azerty")
 loic.save
 
-tristan = User.new(email: "tristan@animalrent.com", password: "azerty")
+tristan = User.new(email: "tristan@animalrent.com", name: "tristan", password: "azerty")
 tristan.save
 
 nala = Animal.new(user: justine, name: "Nala", description: "Husky de 2 ans, super active et joueuse")
