@@ -1,8 +1,12 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12">
+      <%= image_tag("dog_avatar", :size => '300x250') %>
       <h1><%= @animal.name %></h1>
       <p><%= @animal.description %></p>
+      <%= link_to animal_path(@animal), method: :delete, data: { confirm: "Are you sure?" } do %>
+        <i class="fa fa-trash destroy_animal"></i>
+       <% end %>
       <p><%= @animal.species %></p>
       <%= link_to "Back to all animals", animals_path %>
     </div>
