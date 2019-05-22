@@ -1,13 +1,16 @@
 <div class="container">
-  <div class="row">
-    <div class="col-xs-12">
-      <%= image_tag("dog_avatar", :size => '300x250') %>
+  <div class="row justify-content-center">
+    <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+      <%= image_tag('dog_avatar.jpg', :size => '350x250') %>
       <h1><%= @animal.name %></h1>
       <p><%= @animal.description %></p>
-      <%= link_to animal_path(@animal), method: :delete, data: { confirm: "Are you sure?" } do %>
-        <i class="fa fa-trash destroy_animal"></i>
-       <% end %>
-      <p><%= @animal.species %></p>
+      <div class="d-flex justify-content-between">
+      <%= link_to "Book this animal", new_animal_booking_path(@animal), class: 'btn btn-outline-success', method: :get %>
+      <%= link_to "Delete this animal", animal_path(@animal), class: 'btn btn-outline-danger', method: :delete %>
+      </div>
+      <br>
       <%= link_to "Back to all animals", animals_path %>
     </div>
   </div>
+
+
