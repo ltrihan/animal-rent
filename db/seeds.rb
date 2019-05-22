@@ -13,7 +13,7 @@ User.destroy_all
 puts "Creating some users and animals..."
 
 
-kevin = User.new(email: ", name: "kevin", password: "azerty")
+kevin = User.new(email: "kevin@animalrent.com", name: "kevin", password: "azerty")
 kevin.save
 
 justine = User.new(email: "justine@animalrent.com", name: "justine", password: "azerty")
