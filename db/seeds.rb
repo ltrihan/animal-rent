@@ -24,16 +24,16 @@ loic.save
 tristan = User.new(email: "tristan@animalrent.com", password: "azerty")
 tristan.save
 
-nala = Animal.new(user: justine, name: "Nala")
+nala = Animal.new(user: justine, name: "Nala", description: "Husky de 2 ans, super active et joueuse")
 nala.save
 
-caroline = Animal.new(user: loic, name: "Caroline")
+caroline = Animal.new(user: loic, name: "Caroline", description: "Jeune chienne adorant se promener")
 caroline.save
 
-drogo = Animal.new(user: kevin, name: "Drogo")
+drogo = Animal.new(user: kevin, name: "Drogo", description: "Chien recherchant compagnons")
 drogo.save
 
-komodo = Animal.new(user: tristan, name: "Komodo")
+komodo = Animal.new(user: tristan, name: "Komodo", description: "Recherche pet sitter pour le weekend")
 komodo.save
 
 puts "Done ! Let's try your app locally."
