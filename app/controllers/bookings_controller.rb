@@ -12,7 +12,7 @@ class BookingsController < ApplicationController
         @booking.animal = @animal
         @booking.user = @user
         if @booking.save
-            redirect_to root_path
+            redirect_to user_path(current_user)
         else
             render :new
         end            
