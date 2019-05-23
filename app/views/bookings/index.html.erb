@@ -1,0 +1,13 @@
+<h2 class="text-center">Here are your bookings 📥</h2>
+<div class="container">
+  <div class="row">
+    <ul class="list-group-item list-group-item-action list-group-item-light">
+      <% @bookings.each do |booking| %>
+        <li> Start at : <%= booking.start_at %> - End at : <%= booking.end_at %> - <%= booking.status %>
+      <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
