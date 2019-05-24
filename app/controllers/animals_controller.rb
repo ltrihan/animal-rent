@@ -1,6 +1,14 @@
 class AnimalsController < ApplicationController
   def index
     @animals = Animal.all
+    @localized_animals = Animal.where.not(latitude: nil, longitude: nil)
+
+    @markers = @localized_animals.map do |animal|
+      {
+        lat: animal.latitude,
+        lng: animal.longitude
+      }
+    end
   end
 
   def show
@@ -15,6 +23,7 @@ class AnimalsController < ApplicationController
     @user = current_user
     @animal = Animal.new(animal_params)
     @animal.user = @user
+    @animal.address = @user.address
     if @animal.save
       redirect_to user_path(@user)
     else
@@ -38,6 +47,6 @@ class AnimalsController < ApplicationController
   end
 
   def animal_params
-    params.require(:animal).permit(:name, :description, :species, :price, :photo)
+    params.require(:animal).permit(:name, :description, :species, :price, :address, :photo, :latitude, :longitude)
   end
 end
