@@ -17,10 +17,33 @@
   margin: 0;
 }
 
+a:hover {
+  text-decoration: none;
+  .card-trip {
+    .card-trip-infos {
+      .card-text {
+        h2 {
+          text-decoration: none;
+          color: black;
+        }
+      }
+      .card-trip-pricing {
+        h2 {
+          color: black;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+
 .card-trip p {
   font-size: 12px;
   opacity: .7;
   margin: 0;
+  text-decoration: none;
+  color: black;
 }
 
 
@@ -39,7 +62,7 @@
   width: 50px;
   border-radius: 30%;
 }
-//======================================================
+
 .bg-img {
   color: black;
   background-image: linear-gradient(180deg,rgba(0,0,0,.2),rgba(0,0,0,.5) 70%), asset-url('grass.jpg');
@@ -72,7 +95,5 @@
 
 .cards {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  grid-template-columns: 1fr 1fr 1fr;
+  align-items: flex-start;
 }
