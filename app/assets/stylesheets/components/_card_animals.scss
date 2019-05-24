@@ -39,7 +39,7 @@
   width: 50px;
   border-radius: 30%;
 }
-//======================================================
+
 .list {
   color: white;
   background-image: linear-gradient(180deg,rgba(0,0,0,.2),rgba(0,0,0,.5) 70%), asset-url('grass.jpg');
@@ -72,6 +72,6 @@
 .cards {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   grid-template-columns: 1fr 1fr 1fr;
 }
