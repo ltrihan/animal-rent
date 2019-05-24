@@ -1,21 +1,27 @@
 <div class="container">
-<div >
-    <h2 class="text-center">Informations of : <%= @user.name %></h2>
 
-    <h2 class="text-center">My animals put on rent :</h2>
+  <!-- Heading Row -->
+  <br>
+  <h1 class="text-center">Welcome on your profile <%= @user.name %> 😎 </h1>
+  <div class="row align-items-center my-4">
+    <div class="col-lg-5">
+      <%= image_tag('dog_avatar.jpg', :size => '350x250') %>
+    </div>
+    <!-- /.col-lg-8 -->
+    <div class="col-sm-5">
+      <h1 class="font-weight-light">Your description :</h1>
+      <p> User description to write down here ! (user.description) </p>
+    </div>
+    <!-- /.col-md-4 -->
+  </div>
+  <!-- /.row -->
+  <div class="card text-white bg-secondary my-5 py-4 text-center">
+    <div class="card-body">
+      <h3 class="text-white m-0">Your ongoing bookings : </h3>
+    </div>
+  </div>
 
-    <% if @user.animals.empty? %>
-      <p class="text-center">You haven't put any animal on rent.</p>
-    <% else %>
-      <ul class="text-center">
-        <% @user.animals.each do |animal| %>
-        <li style="list-style: none"><%= animal.name %></li>
-        <% end %>
-      </ul>
-    <% end %>
-
-    <h2 class="text-center">My bookings</h2>
-
+  <div class="text-center">
     <% if @user.bookings.empty? %>
       <p class="text-center">You haven't any booking for the moment.</p>
     <% else %>
@@ -26,4 +32,37 @@
       </ul>
     <% end %>
   </div>
+
+  <!-- Call to Action Well -->
+  <div class="card text-white bg-secondary my-5 py-4 text-center">
+    <div class="card-body">
+      <h3 class="text-white m-0">Your animals on rent : </h3>
+    </div>
+  </div>
+
+
+  <% if @user.animals.empty? %>
+    <p class="text-center">You haven't put any animal on rent.</p>
+  <% else %>
+    <div class="row">
+      <% @user.animals.each do |animal| %>
+        <div class="col-md-4 mb-5">
+          <div class="card h-100">
+            <div class="card-body">
+              <h1 class="card-title"><%= animal.name %></h1>
+              <p class="card-text"><%= animal.description %></p>
+              <%= image_tag('husky.jpg', :size => '300x200') %>
+            </div>
+            <div class="card-footer">
+              <%= link_to "More details", animal_path(animal), class: 'btn btn-outline-secondary', method: :get %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+
+    <!-- /.row -->
+  <%= link_to "List of all animals", animals_path(@animal), class: 'btn btn-outline-danger', method: :get %>
+
 </div>

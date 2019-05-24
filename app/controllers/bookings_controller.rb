@@ -1,5 +1,10 @@
 class BookingsController < ApplicationController
 
+    def index
+      @bookings = Booking.where(user: current_user)
+    end
+
+
     def new
         @booking = Booking.new
         @animal = Animal.find(params[:animal_id])
@@ -15,8 +20,24 @@ class BookingsController < ApplicationController
             redirect_to user_path(current_user)
         else
             render :new
-        end            
+        end
     end
+
+    def edit
+      @booking = Booking.find(params[:id])
+    end
+
+    def update
+      @booking = Booking.find(params[:id])
+      @booking.update(booking_params)
+    end
+
+    def destroy
+      @booking = Booking.find(params[:id])
+      @booking.destroy
+      redirect_to bookings_path(@booking)
+    end
+
 
     private
 
