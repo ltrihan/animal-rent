@@ -3,7 +3,7 @@
     <% @animals.each do |animal| %>
       <div class="col-lg-3">
         <div class="card-trip">
-          <%= image_tag 'dog_avatar.jpg' %>
+          <%= cl_image_tag animal.photo %>
           <div class="card-trip-infos">
             <div>
               <%= link_to animal_path(animal) do %>
@@ -12,12 +12,14 @@
               <p><%= animal.description %></p>
             </div>
             <h2 class="card-trip-pricing">07€/h</h2>
-            <img src="https://www.dogingtonpost.com/wp-content/uploads/2017/02/GoldenUnited.png" class="card-trip-user avatar-bordered">
+            <div class="card-trip-user">
+            <%= cl_image_tag(animal.user.photo, :size => '45X45', class: "avatar-bordered") %></div>
           </div>
         </div>
       </div>
     <% end %>
   </div>
+
   <div
   id="map"
   style="width: 100%;
