@@ -2,7 +2,7 @@
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  border-radius: 8%
+  border-radius: 8%;
 }
 
 .card-trip > img {
@@ -39,6 +39,35 @@
   width: 50px;
   border-radius: 30%;
 }
+//======================================================
+.list {
+  color: white;
+  background-image: linear-gradient(180deg,rgba(0,0,0,.2),rgba(0,0,0,.5) 70%), asset-url('grass.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  // height: calc(100vh - 66px);
+  display: flex;
+  // align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0;
+  padding: 10px;
+}
+
+.list h1 {
+  font-size: 60px;
+  font-weight: bold;
+}
+
+.list .row {
+  margin-top: 80px;
+}
+
+.list h2 {
+  margin-bottom: 30px;
+}
 
 .cards {
   display: flex;
@@ -46,4 +75,3 @@
   align-items: center;
   grid-template-columns: 1fr 1fr 1fr;
 }
-
