@@ -5,11 +5,11 @@
       <h1><%= @animal.name %></h1>
       <p><%= @animal.description %></p>
       <div class="d-flex justify-content-between">
-      <%= link_to "Book this animal", new_animal_booking_path(@animal), class: 'btn btn-outline-success', method: :get %>
-      <%= link_to "Delete this animal", animal_path(@animal), class: 'btn btn-outline-danger', method: :delete %>
+      <%= link_to "Book this animal", new_animal_booking_path(@animal), class: 'btn btn-success', method: :get %>
+      <%= link_to "Delete this animal", animal_path(@animal), class: 'btn btn-danger', method: :delete %>
       </div>
       <br>
-      <div class="text-warning">
+      <div class="link_show">
       <%= link_to "Back to all animals", animals_path %>
       </div>
     </div>
