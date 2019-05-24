@@ -4,22 +4,23 @@
       <div>
         <%= link_to animal_path(animal) do %>
           <div class="card-trip">
-            <%= image_tag 'dog_avatar.jpg' %>
+            <%= cl_image_tag animal.photo %>
              <div class="card-trip-infos">
               <div class="card-text">
                 <h2><%= animal.name %></h2>
                 <p><%= animal.description %></p>
               </div>
-              <div class="card-trip-pricing">
+               <div class="card-trip-pricing">
                 <h2>07€/h</h2>
               </div>
-               <img src="https://www.dogingtonpost.com/wp-content/uploads/2017/02/GoldenUnited.png" class="card-trip-user avatar-bordered">
-            </div>
-         </div>
+              <%= cl_image_tag(animal.user.photo, :size => '45X45', class: "avatar-bordered") %>
+             </div>
+          </div>
         <% end %>
-      </div>
+       </div>
     <% end %>
   </div>
+
   <div
   id="map"
   style="width: 100%;

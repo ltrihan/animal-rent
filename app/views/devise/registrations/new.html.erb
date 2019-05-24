@@ -1,5 +1,5 @@
 
-<div class="container">
+<div class="bg-img">
   <div class="row justify-content-center">
     <div class="form-login col-xs-12 col-sm-4 col-sm-offset-4">
       <h2>Sign up</h2>
@@ -11,6 +11,9 @@
                       required: true,
                       autofocus: true,
                       input_html: { autocomplete: "email" }%>
+          <%= f.input :name,
+                      required: true,
+                      input_html: { autocomplete: "name" }%>
           <%= f.input :password,
                       required: true,
                       hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
